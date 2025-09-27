@@ -20,7 +20,6 @@ int main(void) {
 
     // Khởi tạo các module
     sensors_init();
-    actuators_init();
     buttons_init();
     watering_init();
 
