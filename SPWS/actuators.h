@@ -3,12 +3,10 @@
 
 #include "types.h"
 
-void actuators_init(void);
 void turn_pump_on(void);
 void turn_pump_off(void);
-void set_led_state(led_state_t s);
+pump_state_t get_pump_state (void);
 
+void led_set_state(led_state_t state );
 led_state_t get_led_state(void);
-pump_state_t get_pump_state(void);
-
 #endif //ACTUATORS_H

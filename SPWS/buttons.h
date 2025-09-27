@@ -2,9 +2,9 @@
 #define BUTTONS_H 
 
 #include <stdio.h>
-#include <stdbool.h>
+#include "types.h"
 
 void buttons_init(void);
-void buttons_pull(bool *auto_mode, bool *manual_mode,bool *quit);
+void buttons_poll(system_config_t *config);
 
 #endif

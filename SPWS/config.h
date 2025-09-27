@@ -3,12 +3,9 @@
 
 #include <stdint.h>
 
-//Xét các giá trị ngưỡng
-#define DEFAULT_MIN_MOISTURE 30 //thiết lập ngưỡng nhiệt độ tối thiểu
-#define DEFAULT_MAX_MOISTURE 60 //thiết lập ngưỡng nhiệt độ tối đa
-#define DEFAULT_WATER_SECONDS 15 //thời gian bơm nước (s)
-#define DEFAULT_SENSORS_INTERVAL 10//thời gian hoạt động giữa các sensor (s)
-#define MANUAL_WATER_SECONDS 10 //thời gian tưới khi cùng nút thủ công
+#define MIN_MOISTURE_DEFAULT 20
+#define MAX_MOISTURE_DEFAULT 40
+#define TIME_WATERING_SECONDS 60
+#define TIME_WAIT_WATERING_SENCONDS 10
 
-#endif //CONFIG_H
-
+#endif

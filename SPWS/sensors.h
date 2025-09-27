@@ -4,6 +4,6 @@
 #include "types.h"
 
 void sensors_init(void);
-void sensors_read(sensors_data_t *out);
+sensors_data_t sensors_read_data(void);
 
-#endif //SENSORS_H
+#endif
