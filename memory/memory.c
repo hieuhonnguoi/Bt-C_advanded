@@ -33,7 +33,7 @@ int main(void){
 	printf("./memory_lab out_of_memory\n");
 	printf("./memory_lab memory_leak\n");
 	printf("X to exit\n");
-	printf("Nhap lua chon(1,2,3):\n");
+	printf("Select option(1,2,3):\n");
 
 	char option;
 	int count = 0 ;
@@ -41,16 +41,13 @@ int main(void){
 
 	if (option == 'X' || option == 'x'){
 		printf("End.");
-	} else 
-	if (option == choose_stack_overflow){
+	} else if (option == choose_stack_overflow){
 		printf("Demo stack overflow");
 		stack_overflow(count);
-	} else
-	if (option == choose_out_of_memory){
+	} else if (option == choose_out_of_memory){
 		printf("Demo out of memory");
 		out_of_memory();
-	} else 
-	if (option == choose_memory_leak){
+	} else if (option == choose_memory_leak){
 		printf("Demo memory leak");
 		memory_leak();
 	}

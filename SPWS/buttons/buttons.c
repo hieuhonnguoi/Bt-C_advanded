@@ -3,7 +3,8 @@
 #include "buttons.h"
 #include "actuators.h"
 
-// Biến quản lý trạng thái tưới thủ công
+#define switch_mode_button 1
+#define PUMP_ON_OFF_MANUAL_button 2
 static time_t manual_start_time;
 static int manual_watering_active = 0;
 
@@ -23,7 +24,7 @@ void buttons_init(void){
 void buttons_poll(system_config_t *config){
     int key;
     key = get_key;
-    if (key == '1'){
+    if (key == switch_mode_button){
         if (config->mode == MODE_AUTO){
             config->mode = MODE_MANUAL;
             turn_pump_off();
@@ -37,7 +38,7 @@ void buttons_poll(system_config_t *config){
         }
     }
     if(config->mode == MODE_MANUAL){
-        if (key == '2' && !manual_watering_active){
+        if (key == PUMP_ON_OFF_MANUAL_button && !manual_watering_active){
             turn_pump_on();
             manual_start_time = time(NULL);
             manual_watering_active = 1;

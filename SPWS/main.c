@@ -18,7 +18,6 @@ int main(void) {
         .mode = MODE_AUTO
     };
 
-    // Khởi tạo các module
     sensors_init();
     buttons_init();
     watering_init();
@@ -26,10 +25,9 @@ int main(void) {
     printf("[INFO] System initialized.\n");
     printf("[INFO] Press '1' to toggle AUTO/MANUAL, '2' to start/stop pump (MANUAL mode).\n");
 
-    // Vòng lặp chính
     while (1) {
-        watering_update();   // cập nhật logic hệ thống
-        sleep(1);            // chờ 1 giây để giảm tải CPU
+        watering_update();   
+        sleep(1);            
     }
 
     return 0;
