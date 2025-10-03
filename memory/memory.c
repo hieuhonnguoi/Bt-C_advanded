@@ -3,13 +3,15 @@
 #include <string.h>
 #include <ctype.h>
 
-// Stack overflow
+#define choose_stack_overflow 1
+#define choose_out_of_memory 2
+#define choose_memory_leak 3
+
 void stack_overflow(int count){
 	printf("Stack overflow: %d\n",count);
 	stack_overflow(count+1);
 }
 
-//Out of memory (OOM)
 void out_of_memory (){
 	while(1){
 		int *MEM = (int*) malloc(sizeof(int)*10000000);
@@ -20,7 +22,6 @@ void out_of_memory (){
 	}
 }
 
-//Memory leak
 void memory_leak(){
 	int *MEM = (int*) malloc(sizeof(int)*1000);
 	printf("Do not have free(MEM)");
@@ -41,15 +42,15 @@ int main(void){
 	if (option == 'X' || option == 'x'){
 		printf("End.");
 	} else 
-	if (option == '1'){
+	if (option == choose_stack_overflow){
 		printf("Demo stack overflow");
 		stack_overflow(count);
 	} else
-	if (option == '2'){
+	if (option == choose_out_of_memory){
 		printf("Demo out of memory");
 		out_of_memory();
 	} else 
-	if (option == '3'){
+	if (option == choose_memory_leak){
 		printf("Demo memory leak");
 		memory_leak();
 	}
